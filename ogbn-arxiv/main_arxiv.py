@@ -112,20 +112,6 @@ def main():
     valid_idx = split_idx['valid'].to(device)
     test_idx = split_idx['test'].to(device)
 
-    # model = ADNGCN(in_features=x.size(-1),
-    #              gnn_in_features=args.gnn_in_features,
-    #              out_features=dataset.num_classes,
-    #              input_map_numlayer=args.input_map_numlayer,
-    #              backbone_numlayer=args.backbone_numlayer,
-    #              output_map_numlayer=args.output_map_numlayer,
-    #              input_map_norm=args.input_map_norm,
-    #              backbone_norm=args.backbone_norm,
-    #              output_map_norm=args.output_map_norm,
-    #              learner_hid_features=args.learner_hid_features,
-    #              learner_numlayer=args.learner_numlayer,
-    #              negative_slope=args.negative_slope,
-    #              dropout=args.dropout)
-
     if args.gnn_conv == "gcn":
         if not args.deep:
             model = NoSAFGCN(in_features=x.size(-1),
